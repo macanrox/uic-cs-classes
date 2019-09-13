@@ -1,0 +1,130 @@
+1a)
+
+void foo(int *a, int lo, int hi) 
+{     
+   int half = n/2;
+   int a1, b1, a2, b2;
+   int a1Diff, b1Diff, a2Diff, b2Diff;
+   int x, y, z;
+   
+   if(n>1);
+   {
+   	for(int i=0; i<half; i++)
+   	{
+   		a1[SIZE - n + i + half] = lo[SIZE - n + i];
+   		b1[SIZE - n + i + half] = lo[SIZE - n + i + half];
+   		
+   		a2[SIZE - n + i + half] = hi[SIZE - n + i];
+   		b2[SIZE - n + i + half] = hi[SIZE - n + i + half];
+   	}
+   	
+   	a1Diff = SIZE - half;
+   	b1Diff = SIZE - half;
+   	a2Diff = SIZE - half;
+   	b2Diff = SIZE - half;
+   	
+   	x = foo(half, a1, b1);
+   	y = foo(half, a2, b2);
+   	z = foo((a, (a1+a2), (b1+b2) - x - y);
+   }
+}
+
+
+2a) 
+
+void foo(int *a, int lo, int hi)
+{
+	int mid, i, j;
+	mid = (lo + hi)/2;			
+	if(hi > lo)
+	{
+		foo(a, lo, mid);		
+		foo(a, mid_1, hi);		
+	}
+	for(i=lo; i<hi; i++)
+	{
+		for(j=10; j=hi; j++)
+		{
+			a[j] = a[i+j];
+		}
+	}
+}
+
+
+3a)
+
+void foo(int *a, int lo, int hi)
+{
+	int mid;
+	mid = (lo + hi)/2;			
+	if(hi > lo)
+	{
+		foo(a, mid, hi);				
+	}
+	for(i=lo; i=hi-1; i++)
+	{
+		a[j] = a[i+j];
+	}
+}
+
+
+5)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 10000
+
+struct big_struct 
+{
+    double gpa[3300];
+    int ssn[3300];
+    int age[3300];
+    double log_data[100];
+}BIG_THINGS[MAX], *p[MAX];
+typedef struct big_struct BIG_THING;
+
+int compGPA(const void *a, const void *b)
+{
+     a = ((struct big_struct *)a)->gpa;
+     b = ((struct big_struct *)b)->gpa;
+    
+     return strcmp(a, b);
+}
+
+int compSSN(const void *a, const void *b)
+{
+    a = ((struct big_struct *)a)->ssn;
+    b = ((struct big_struct *)b)->ssn; 
+    return strcmp(a, b);
+}
+
+int compAGE(const void *a, const void *b)
+{
+    const int *ageA = ((struct big_struct *)a)->age;
+    const int *ageB = ((struct big_struct *)b)->age;
+    return strcmp(a, b);
+}
+
+int compLOG(const void *a, const void *b)
+{
+    a = ((struct big_struct *)a)->log_data;
+    b = ((struct big_struct *)b)->log_data;
+    return strcmp(a, b);
+}
+
+main()
+{
+      struct BIG_THINGS *data;
+      int maxSize = MAX;
+
+      qsort(data, maxSize, sizeof(struct big_struct), compGPA);
+      qsort(data, maxSize, sizeof(struct big_struct), compSSN);
+      qsort(data, maxSize, sizeof(struct big_struct), compAGE);
+      qsort(data, maxSize, sizeof(struct big_struct), compLOG);
+      
+      return 0;
+}
+
+
+

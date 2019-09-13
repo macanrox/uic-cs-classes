@@ -1,0 +1,34 @@
+Dump of assembler code for function phase_4:
+0x08048dc9 <phase_4+0>: push   %ebp
+0x08048dca <phase_4+1>: mov    %esp,%ebp
+0x08048dcc <phase_4+3>: sub    $0x28,%esp
+0x08048dcf <phase_4+6>: lea    -0x4(%ebp),%eax
+0x08048dd2 <phase_4+9>: mov    %eax,0xc(%esp)
+
+0x08048dd6 <phase_4+13>:        lea    -0x8(%ebp),%eax
+0x08048dd9 <phase_4+16>:        mov    %eax,0x8(%esp)
+0x08048ddd <phase_4+20>:        movl   $0x804a3ea,0x4(%esp)
+0x08048de5 <phase_4+28>:        mov    0x8(%ebp),%eax
+0x08048de8 <phase_4+31>:        mov    %eax,(%esp)
+0x08048deb <phase_4+34>:        call   0x8048884 <sscanf@plt>
+
+0x08048df0 <phase_4+39>:        cmp    $0x2,%eax
+0x08048df3 <phase_4+42>:        jne    0x8048e02 <phase_4+57>
+0x08048df5 <phase_4+44>:        mov    -0x4(%ebp),%eax
+0x08048df8 <phase_4+47>:        cmp    $0x1,%eax
+0x08048dfb <phase_4+50>:        jle    0x8048e02 <phase_4+57>
+0x08048dfd <phase_4+52>:        cmp    $0x4,%eax
+0x08048e00 <phase_4+55>:        jle    0x8048e07 <phase_4+62>
+0x08048e02 <phase_4+57>:        call   0x80491c5 <explode_bomb>
+0x08048e07 <phase_4+62>:        mov    -0x4(%ebp),%eax
+0x08048e0a <phase_4+65>:        mov    %eax,0x4(%esp)
+0x08048e0e <phase_4+69>:        movl   $0x5,(%esp)
+
+0x08048e15 <phase_4+76>:        call   0x8048b00 <func4>
+0x08048e1a <phase_4+81>:        cmp    -0x8(%ebp),%eax
+0x08048e1d <phase_4+84>:        je     0x8048e24 <phase_4+91>
+0x08048e1f <phase_4+86>:        call   0x80491c5 <explode_bomb>
+
+0x08048e24 <phase_4+91>:        leave  
+0x08048e25 <phase_4+92>:        ret    
+End of assembler dump.

@@ -1,0 +1,27 @@
+1) What is the difference between executing these two commands on bert:
+./a.out vs. a.out
+
+Executing "a.out" produces an error, "a.out: Command not found." because a.out is an executable output. 
+When we execute "./a.out" we are running that executable. 
+
+2) What are these commands attempting to do, you can assume they are being run on bert and that file.c is a valid C program:
+gcc -o file.out file.c -m32 -O2
+gcc -S file.c -m32 -O2
+
+The first command is generating an object file file.o from file.out. 
+The second command compiles file.c into a GNU assembler code and because it's -S, it's preprocessed. 
+The m32 flag tells the program to run in a 32 bit window while the O2 flag increases the speed and decreases the program file. 
+
+3) You compile your program hwk1.c on bert. Where can the executable that is produced be used?
+
+The file can be run in Window, Mac and Linux
+
+4) What are the following used for within your shell on a linux/unix machine?
+|, >, <, &, fg, bg,
+
+| redirects the output through pipes. 
+> redirects to the output.
+< redirects to the input.
+& appended to the command will run the job in the background.
+fg brings the process back to the foreground.
+bg sends an already-running foreground job to the background.

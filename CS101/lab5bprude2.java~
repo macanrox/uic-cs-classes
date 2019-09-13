@@ -1,0 +1,22 @@
+/**
+ * 
+ * 
+ * @author Bresia Prudente
+ */
+
+public class lab5bprude2
+{
+  
+  public static void main (String[] args) 
+  {
+    System.out.println("Begin Java Exection");
+    System.out.println("");
+
+
+    // put your Java Program here
+
+
+    System.out.println("");
+    System.out.println("End Java Exection");
+  }
+} // end of Template class

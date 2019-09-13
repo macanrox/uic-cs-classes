@@ -1,0 +1,9 @@
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\bin\Debug\DatabaseApp.exe.config
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\bin\Debug\DatabaseApp.exe
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\bin\Debug\DatabaseApp.pdb
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\obj\Debug\DatabaseApp.Form1.resources
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\obj\Debug\DatabaseApp.Properties.Resources.resources
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\obj\Debug\DatabaseApp.csproj.GenerateResource.Cache
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\obj\Debug\DatabaseApp.exe
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\obj\Debug\DatabaseApp.pdb
+C:\Users\Bresia\Dropbox\CS\cs341\hw8\DatabaseApp\DatabaseApp\obj\Debug\DatabaseApp.csprojResolveAssemblyReference.cache

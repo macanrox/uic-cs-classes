@@ -1,0 +1,30 @@
+[x]Display instructions and identifying information.  
+[x]Declare the 42 variables for the board and use them in a method to 
+  display the board.  
+[x]Prompt for user input and read it in as a String, changing it to all 
+  upper-case.  
+[x]Extract the first char of the user input. 
+[x]Prompt for user input
+	[]Make prompts for X and O
+
+
+
+[]Use the user input to slide each piece down to the lowest available 
+  row in each column. 
+[]As the move number goes from odd to even, the piece to be placed 
+  should go from 'X' to 'O'.  
+[]Use setValue() and getValue() methods to manipulate the 
+  variables p0..p41
+
+
+
+[]Implement "popping out" the lowest piece in a column.  
+	[]Ensure this move can only be done when the player to move 
+	  has the bottom-most piece in a column.  
+[]If a column is full then a blank should be brought into the top-most 
+  square which becomes empty.
+
+
+
+[]After each move is made check to see if there are 4 in a row.  
+[]If so display a message for the winning player and exit the program. 

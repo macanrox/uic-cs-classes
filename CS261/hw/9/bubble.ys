@@ -1,0 +1,74 @@
+/* $begin bubble-solve-ys */
+# Execution begins at address 0
+	.pos 0			#
+init:	irmovl Stack, %esp  	# Set up Stack pointer  
+	irmovl Stack, %ebp  	# Set up base pointer   
+	jmp Main		# Execute main program
+
+# Array of 6 elements
+	.align 4 	
+array:	.long 0xdddd		# These values should get sorted
+	.long 0xeeee
+	.long 0xbbbb
+	.long 0xaaaa
+	.long 0xffff
+	.long 0xcccc
+	.long 0x0101		# This value should not change
+
+Main:	irmovl $6,%eax	
+	pushl %eax		# Push 6
+	irmovl array,%edx
+	pushl %edx      	# Push array
+	call Bubble		# Bubble(array, 6)
+	halt		
+
+# void Bubble(int *data, int count)
+Bubble:	pushl %ebp
+	rrmovl %esp,%ebp
+	pushl %ebx		# Save registers
+	pushl %esi
+	pushl %edi
+	mrmovl 8(%ebp),%ecx 	# ecx = data
+	mrmovl 12(%ebp),%edx	# edx = count
+	addl %edx,%edx
+	addl %edx,%edx		# count *= 4;
+	irmovl $4,%eax		
+	subl %eax,%edx		# count -= 4;
+	addl %ecx,%edx		# edx = p_end
+	rrmovl %ecx,%eax	
+	subl %edx,%eax		# data - p_end
+	jge Done
+Loop1:	rrmovl %ecx,%ebx	# p = data
+Loop2:	mrmovl (%ebx),%edi	# r = *p
+	mrmovl 4(%ebx),%esi	# s = *(p+1)
+	rrmovl %esi,%eax
+/* $begin bubble-swap-ys */
+	subl %edi,%eax		# s-r
+	jge Skip		# Skip if s >= r
+	rmmovl %esi,(%ebx)	# *p = s
+	rmmovl %edi,4(%ebx)	# *(p+1) = r
+Skip:
+/* $end bubble-swap-ys */
+	irmovl $4,%eax
+	addl %eax,%ebx		# p++
+	rrmovl %ebx,%eax
+	subl %edx,%eax		# p - p_end
+	jl Loop2
+	irmovl $4,%eax
+	subl %eax,%edx		# p_end--
+	rrmovl %ecx,%eax
+	subl %edx,%eax		# data - p_end
+	jl Loop1
+Done:
+	popl %edi		# Restore registers
+	popl %esi
+	popl %ebx
+	rrmovl %ebp,%esp
+	popl %ebp
+	ret
+
+	.pos 0x100		
+Stack:	# The stack goes here and grows to lower addresses
+/* $end bubble-solve-ys */
+
+

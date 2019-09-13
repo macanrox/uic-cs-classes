@@ -1,0 +1,5 @@
+C:\Users\Bresia\Dropbox\CS\cs341\hw7\NetflixApp\NetflixApp\obj\Debug\NetflixApp.csprojResolveAssemblyReference.cache
+C:\Users\Bresia\Dropbox\CS\cs341\hw7\NetflixApp\NetflixApp\obj\Debug\NetflixApp.Form1.resources
+C:\Users\Bresia\Dropbox\CS\cs341\hw7\NetflixApp\NetflixApp\obj\Debug\NetflixApp.Properties.Resources.resources
+C:\Users\Bresia\Dropbox\CS\cs341\hw7\NetflixApp\NetflixApp\obj\Debug\NetflixApp.csproj.GenerateResource.Cache
+C:\Users\Bresia\Dropbox\CS\cs341\hw7\NetflixApp\NetflixApp\bin\Debug\NetflixApp.exe.config

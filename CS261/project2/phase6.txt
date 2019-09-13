@@ -1,0 +1,88 @@
+Dump of assembler code for function phase_6:
+0x08048c17 <phase_6+0>: push   %ebp
+0x08048c18 <phase_6+1>: mov    %esp,%ebp
+0x08048c1a <phase_6+3>: push   %edi
+0x08048c1b <phase_6+4>: push   %esi
+0x08048c1c <phase_6+5>: push   %ebx
+0x08048c1d <phase_6+6>: sub    $0x3c,%esp
+0x08048c20 <phase_6+9>: lea    -0x24(%ebp),%eax
+0x08048c23 <phase_6+12>:        mov    %eax,0x4(%esp)
+0x08048c27 <phase_6+16>:        mov    0x8(%ebp),%eax
+0x08048c2a <phase_6+19>:        mov    %eax,(%esp)
+0x08048c2d <phase_6+22>:        call   0x8049207 <read_six_numbers>
+0x08048c32 <phase_6+27>:        mov    $0x0,%ebx
+0x08048c37 <phase_6+32>:        mov    -0x24(%ebp,%ebx,4),%eax
+0x08048c3b <phase_6+36>:        sub    $0x1,%eax
+0x08048c3e <phase_6+39>:        cmp    $0x5,%eax
+0x08048c41 <phase_6+42>:        jbe    0x8048c48 <phase_6+49>
+0x08048c43 <phase_6+44>:        call   0x80491c5 <explode_bomb>
+
+0x08048c48 <phase_6+49>:        lea    0x1(%ebx),%edi
+0x08048c4b <phase_6+52>:        cmp    $0x6,%edi
+0x08048c4e <phase_6+55>:        je     0x8048cee <phase_6+215>
+0x08048c54 <phase_6+61>:        lea    -0x24(%ebp,%ebx,4),%esi
+0x08048c58 <phase_6+65>:        mov    %edi,%ebx
+0x08048c5a <phase_6+67>:        lea    -0x24(%ebp),%eax
+0x08048c5d <phase_6+70>:        mov    %eax,-0x40(%ebp)
+0x08048c60 <phase_6+73>:        mov    -0x40(%ebp),%edx
+0x08048c63 <phase_6+76>:        mov    -0x4(%edx,%edi,4),%eax
+0x08048c67 <phase_6+80>:        cmp    0x4(%esi),%eax
+0x08048c6a <phase_6+83>:        jne    0x8048c71 <phase_6+90>
+0x08048c6c <phase_6+85>:        call   0x80491c5 <explode_bomb>
+
+0x08048c71 <phase_6+90>:        add    $0x1,%ebx
+0x08048c74 <phase_6+93>:        add    $0x4,%esi
+0x08048c77 <phase_6+96>:        cmp    $0x5,%ebx
+0x08048c7a <phase_6+99>:        jle    0x8048c60 <phase_6+73>
+0x08048c7c <phase_6+101>:       mov    %edi,%ebx
+0x08048c7e <phase_6+103>:       jmp    0x8048c37 <phase_6+32>
+0x08048c80 <phase_6+105>:       mov    0x8(%ecx),%ecx
+0x08048c83 <phase_6+108>:       add    $0x1,%eax
+0x08048c86 <phase_6+111>:       cmp    -0x24(%ebp,%edx,4),%eax
+0x08048c8a <phase_6+115>:       jl     0x8048c80 <phase_6+105>
+0x08048c8c <phase_6+117>:       mov    %ecx,-0x3c(%ebp,%edx,4)
+0x08048c90 <phase_6+121>:       add    $0x1,%edx
+0x08048c93 <phase_6+124>:       cmp    $0x5,%edx
+0x08048c96 <phase_6+127>:       jg     0x8048ca4 <phase_6+141>
+0x08048c98 <phase_6+129>:       mov    $0x804b5fc,%ecx
+0x08048c9d <phase_6+134>:       mov    $0x1,%eax
+0x08048ca2 <phase_6+139>:       jmp    0x8048c86 <phase_6+111>
+0x08048ca4 <phase_6+141>:       mov    -0x3c(%ebp),%ecx
+
+0x08048ca7 <phase_6+144>:       mov    -0x38(%ebp),%eax
+0x08048caa <phase_6+147>:       mov    %eax,0x8(%ecx)
+0x08048cad <phase_6+150>:       mov    -0x34(%ebp),%edx
+0x08048cb0 <phase_6+153>:       mov    %edx,0x8(%eax)
+0x08048cb3 <phase_6+156>:       mov    -0x30(%ebp),%eax
+0x08048cb6 <phase_6+159>:       mov    %eax,0x8(%edx)
+0x08048cb9 <phase_6+162>:       mov    -0x2c(%ebp),%edx
+0x08048cbc <phase_6+165>:       mov    %edx,0x8(%eax)
+0x08048cbf <phase_6+168>:       mov    -0x28(%ebp),%eax
+0x08048cc2 <phase_6+171>:       mov    %eax,0x8(%edx)
+0x08048cc5 <phase_6+174>:       movl   $0x0,0x8(%eax)
+0x08048ccc <phase_6+181>:       mov    %ecx,%ebx
+0x08048cce <phase_6+183>:       mov    $0x0,%esi
+0x08048cd3 <phase_6+188>:       mov    0x8(%ebx),%edx
+0x08048cd6 <phase_6+191>:       mov    (%ebx),%eax
+0x08048cd8 <phase_6+193>:       cmp    (%edx),%eax
+0x08048cda <phase_6+195>:       jle    0x8048ce1 <phase_6+202>
+0x08048cdc <phase_6+197>:       call   0x80491c5 <explode_bomb>
+
+0x08048ce1 <phase_6+202>:       mov    0x8(%ebx),%ebx
+0x08048ce4 <phase_6+205>:       add    $0x1,%esi
+0x08048ce7 <phase_6+208>:       cmp    $0x5,%esi
+0x08048cea <phase_6+211>:       je     0x8048cff <phase_6+232>
+0x08048cec <phase_6+213>:       jmp    0x8048cd3 <phase_6+188>
+0x08048cee <phase_6+215>:       mov    $0x804b5fc,%ecx
+0x08048cf3 <phase_6+220>:       mov    $0x1,%eax
+0x08048cf8 <phase_6+225>:       mov    $0x0,%edx
+0x08048cfd <phase_6+230>:       jmp    0x8048c86 <phase_6+111>
+0x08048cff <phase_6+232>:       add    $0x3c,%esp
+0x08048d02 <phase_6+235>:       pop    %ebx
+0x08048d03 <phase_6+236>:       pop    %esi
+0x08048d04 <phase_6+237>:       pop    %edi
+0x08048d05 <phase_6+238>:       pop    %ebp
+0x08048d06 <phase_6+239>:       ret    
+End of assembler dump.
+
+x/3x *(*(*(*(*($ebx+0x8)+0x8)+0x8)+0x8)+0x8)

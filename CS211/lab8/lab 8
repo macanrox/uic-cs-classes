@@ -1,0 +1,76 @@
+/*
+ Lab 8:  Balanced Symbol Checker
+ Author: Bresia Anne Prudente
+ netID:  bprude2
+ Class:  CS 211
+ Lab:    11-12:50
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define TRUE 1
+#define FALSE 0
+
+/************************************************
+ 
+    Stack checks for symbol pairs:
+        -> parentheses: ()
+        -> curly braces: {}
+        -> square brackets: []
+        -> angle brackets: < >
+ 
+ ************************************************/
+
+/* stack function signatures */
+void push (int stack[], int *tos, int val);
+void pop (int stack[], int *tos);
+
+int top (int stack[], int tos);
+int isFull (int tos); /* note returns a boolean value */
+int isEmpty (int tos); /* note returns a boolean value */
+
+int main( int argc, char **argv )
+{
+    
+    int stack[STACKSIZE];
+    int tosPosition = -1; /* Top Of Stack position */
+    
+    
+    /* Debug or -d flag */
+    if( debugMode == TRUE )
+    {
+        printf( "Debugging Information \n" );
+    }
+
+}//end main
+
+/* Grow the stack array if it's full. */
+void push (char *stack, int *tos, int *length, char val)
+{
+    
+    if( /*stack is full*/ )
+    {   
+        
+        /* allocate new dynamic entry into larger size */
+        char *temp; //new array that allocates stack size
+        temp = (char *)malloc( sizeof( char )*( *length + 2 ) );   //how big we want array to grow
+        
+        /*  copy stack value to temp  
+            deallocate current stack array (but keep temp array) 
+            then have stack array refer to new dynamic array
+        */
+        free( stack );
+        stack = temp;
+        *length = *length + 2;
+        
+    }//end if(...
+    
+    /* add value to stack */
+    
+    /* increment tos*/
+    
+    
+}//end void push

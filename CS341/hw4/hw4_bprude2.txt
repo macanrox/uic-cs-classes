@@ -1,0 +1,66 @@
+// 
+// F# functions for HW#4
+// 
+// Bresia Prudente (bprude2)
+// U. of Illinois, Chicago 
+// CS341, Spring 2014 
+// Homework 4 
+// 
+
+//4.1)
+#light
+
+let rec length(L:'a list) = 
+	match L with
+		| [ ] -> 0
+		| _ -> 1 + length(L.Tail)
+
+let rec doLength(L:'a list, len) = 
+	match L with
+		| [ ] -> len
+		| _ -> doLength(L.Tail, 1 + len)
+		
+let length(L:'a list, len) = 
+	doLength(L:'a list, 0)
+
+//4.2)
+#light
+
+let rec length(L) = 
+	match L with
+		| [ ] -> 0
+		| _ -> 1 + length(L.Tail)
+
+let rec doLength(L, len) = 
+	match L with
+		| [ ] -> len
+		| _ -> doLength(L.Tail, 1 + len)
+		
+let length(L) =
+	doLength(L, 0)
+
+let rec median(L) =
+	let L1 = length(L) % 2
+	let L2 = length(L) % (2-1)
+	let L3 = L1 + L2
+	match L with
+		| [ ] -> 0
+		| _ -> if L1 == 1
+			then printfn "%A" L1
+			else printfn "%A" L3
+
+//4.3)
+#light
+
+let rec equal(L1:'a list, L2:'a list) = 
+	match L1 with
+		| [ ] -> true
+		| L1 when L1.Head = L2.Head -> equal (L1.Tail, L2.Tail)
+		| L1 when L1.head < L2.Head -> false
+		| L1 when L1.head > L2.Head -> false
+
+//4.4)
+let rec vectorMultiply(L1:'a list, L2:'a list) = 
+	match L1 with
+	| [ ] -> [ ]
+	| _ -> [L1.Head * L2.Head] @ vectorMultiply(L1.Tail, L2.Tail)

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1365089169 source:c:\users\bprude2\documents\bst.c
+	"bst.h"
+	<stdio.h>
+	<stdlib.h>
+
+1365088262 c:\users\bprude2\documents\bst.h
+
+1365090177 source:c:\users\bprude2\documents\tst.c
+	<assert.h>
+	"bst.h"
+

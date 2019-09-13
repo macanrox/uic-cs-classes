@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1359914024 source:c:\users\lillis\codeblocksprojects\sortlib\sort.c
+	"sort.h"
+	<stdlib.h>
+	<stdio.h>
+
+1359909224 c:\users\lillis\codeblocksprojects\sortlib\sort.h
+	<stdlib.h>
+	<stdio.h>
+
+1359914143 source:c:\users\lillis\codeblocksprojects\sortlib\test.c
+	"sort.h"
+	<stdio.h>
+	<stdlib.h>
+

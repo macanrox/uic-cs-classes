@@ -1,0 +1,30 @@
+0x08048d07 <phase_2+0>: push   %ebp
+0x08048d08 <phase_2+1>: mov    %esp,%ebp
+0x08048d0a <phase_2+3>: push   %ebx
+0x08048d0b <phase_2+4>: sub    $0x34,%esp
+0x08048d0e <phase_2+7>: lea    -0x1c(%ebp),%eax
+0x08048d11 <phase_2+10>:        mov    %eax,0x4(%esp)
+0x08048d15 <phase_2+14>:        mov    0x8(%ebp),%eax
+0x08048d18 <phase_2+17>:        mov    %eax,(%esp)
+0x08048d1b <phase_2+20>:        call   0x8049207 <read_six_numbers>
+0x08048d20 <phase_2+25>:        cmpl   $0x0,-0x1c(%ebp)
+0x08048d24 <phase_2+29>:        jne    0x8048d2c <phase_2+37>
+0x08048d26 <phase_2+31>:        cmpl   $0x1,-0x18(%ebp)
+0x08048d2a <phase_2+35>:        je     0x8048d35 <phase_2+46>
+0x08048d2c <phase_2+37>:        lea    0x0(%esi,%eiz,1),%esi
+0x08048d30 <phase_2+41>:        call   0x80491c5 <explode_bomb>
+0x08048d35 <phase_2+46>:        lea    -0x14(%ebp),%ebx
+0x08048d38 <phase_2+49>:        mov    -0x8(%ebx),%eax
+0x08048d3b <phase_2+52>:        add    -0x4(%ebx),%eax
+0x08048d3e <phase_2+55>:        cmp    %eax,(%ebx)
+0x08048d40 <phase_2+57>:        je     0x8048d47 <phase_2+64>
+0x08048d42 <phase_2+59>:        call   0x80491c5 <explode_bomb>
+0x08048d47 <phase_2+64>:        add    $0x4,%ebx
+0x08048d4a <phase_2+67>:        lea    -0x4(%ebp),%eax
+
+
+
+0x08048d20 <phase_2+25>:        cmpl   $0x0,-0x1c(%ebp)
+
+
+0 1 1 5 9 13

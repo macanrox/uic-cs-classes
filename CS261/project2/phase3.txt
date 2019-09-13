@@ -1,0 +1,67 @@
+Dump of assembler code for function phase_3:
+0x08048e26 <phase_3+0>: push   %ebp
+0x08048e27 <phase_3+1>: mov    %esp,%ebp
+0x08048e29 <phase_3+3>: sub    $0x28,%esp
+0x08048e2c <phase_3+6>: lea    -0x8(%ebp),%eax
+0x08048e2f <phase_3+9>: mov    %eax,0x10(%esp)
+0x08048e33 <phase_3+13>:        lea    -0x9(%ebp),%eax
+0x08048e36 <phase_3+16>:        mov    %eax,0xc(%esp)
+0x08048e3a <phase_3+20>:        lea    -0x4(%ebp),%eax
+0x08048e3d <phase_3+23>:        mov    %eax,0x8(%esp)
+0x08048e41 <phase_3+27>:        movl   $0x804a2fa,0x4(%esp)
+0x08048e49 <phase_3+35>:        mov    0x8(%ebp),%eax
+0x08048e4c <phase_3+38>:        mov    %eax,(%esp)
+0x08048e4f <phase_3+41>:        call   0x8048884 <sscanf@plt>
+0x08048e54 <phase_3+46>:        cmp    $0x2,%eax
+0x08048e57 <phase_3+49>:        jg     0x8048e5e <phase_3+56>
+0x08048e59 <phase_3+51>:        call   0x80491c5 <explode_bomb>
+
+0x08048e5e <phase_3+56>:        cmpl   $0x7,-0x4(%ebp)		//comparison
+0x08048e62 <phase_3+60>:        ja     0x8048f53 <phase_3+301>
+0x08048e68 <phase_3+66>:        mov    -0x4(%ebp),%eax
+0x08048e6b <phase_3+69>:        jmp    *0x804a320(,%eax,4)
+0x08048e72 <phase_3+76>:        cmpl   $0x6c,-0x8(%ebp)		//comparison
+0x08048e76 <phase_3+80>:        je     0x8048f72 <phase_3+332>
+0x08048e7c <phase_3+86>:        lea    0x0(%esi,%eiz,1),%esi
+0x08048e80 <phase_3+90>:        call   0x80491c5 <explode_bomb>
+
+0x08048e85 <phase_3+95>:        mov    $0x74,%eax
+0x08048e8a <phase_3+100>:       jmp    0x8048f77 <phase_3+337>
+0x08048e8f <phase_3+105>:       cmpl   $0x14a,-0x8(%ebp)
+0x08048e96 <phase_3+112>:       je     0x8048f72 <phase_3+332>
+0x08048e9c <phase_3+118>:       lea    0x0(%esi,%eiz,1),%esi
+0x08048ea0 <phase_3+122>:       call   0x80491c5 <explode_bomb>
+
+0x08048ea5 <phase_3+127>:       mov    $0x74,%eax
+0x08048eaa <phase_3+132>:       jmp    0x8048f77 <phase_3+337>
+0x08048eaf <phase_3+137>:       cmpl   $0x33e,-0x8(%ebp)
+0x08048eb6 <phase_3+144>:       je     0x8048f62 <phase_3+316>
+0x08048ebc <phase_3+150>:       lea    0x0(%esi,%eiz,1),%esi
+0x08048ec0 <phase_3+154>:       call   0x80491c5 <explode_bomb>
+
+0x08048ec5 <phase_3+159>:       mov    $0x68,%eax
+0x08048eca <phase_3+164>:       jmp    0x8048f77 <phase_3+337>
+0x08048ecf <phase_3+169>:       cmpl   $0x3b9,-0x8(%ebp)
+0x08048ed6 <phase_3+176>:       je     0x8048f69 <phase_3+323>
+0x08048edc <phase_3+182>:       lea    0x0(%esi,%eiz,1),%esi
+0x08048ee0 <phase_3+186>:       call   0x80491c5 <explode_bomb>
+
+0x08048ee5 <phase_3+191>:       mov    $0x64,%eax
+0x08048eea <phase_3+196>:       jmp    0x8048f77 <phase_3+337>
+0x08048eef <phase_3+201>:       mov    $0x67,%eax
+
+
+// x/10i $pc
+0x8048e2c <phase_3+6>:  lea    -0x8(%ebp),%eax
+0x8048e2f <phase_3+9>:  mov    %eax,0x10(%esp)
+0x8048e33 <phase_3+13>: lea    -0x9(%ebp),%eax
+0x8048e36 <phase_3+16>: mov    %eax,0xc(%esp)
+0x8048e3a <phase_3+20>: lea    -0x4(%ebp),%eax
+0x8048e3d <phase_3+23>: mov    %eax,0x8(%esp)
+0x8048e41 <phase_3+27>: movl   $0x804a2fa,0x4(%esp)
+0x8048e49 <phase_3+35>: mov    0x8(%ebp),%eax
+0x8048e4c <phase_3+38>: mov    %eax,(%esp)
+0x8048e4f <phase_3+41>: call   0x8048884 <sscanf@plt>
+
+
+

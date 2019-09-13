@@ -1,0 +1,39 @@
+Dump of assembler code for function phase_5:
+0x08048d57 <phase_5+0>: push   %ebp
+0x08048d58 <phase_5+1>: mov    %esp,%ebp
+0x08048d5a <phase_5+3>: sub    $0x28,%esp
+0x08048d5d <phase_5+6>: lea    -0x8(%ebp),%eax
+0x08048d60 <phase_5+9>: mov    %eax,0xc(%esp)
+0x08048d64 <phase_5+13>:        lea    -0x4(%ebp),%eax
+0x08048d67 <phase_5+16>:        mov    %eax,0x8(%esp)
+0x08048d6b <phase_5+20>:        movl   $0x804a3ea,0x4(%esp)
+0x08048d73 <phase_5+28>:        mov    0x8(%ebp),%eax
+0x08048d76 <phase_5+31>:        mov    %eax,(%esp)
+0x08048d79 <phase_5+34>:        call   0x8048884 <sscanf@plt>
+0x08048d7e <phase_5+39>:        cmp    $0x1,%eax
+0x08048d81 <phase_5+42>:        jg     0x8048d88 <phase_5+49>
+0x08048d83 <phase_5+44>:        call   0x80491c5 <explode_bomb>
+
+0x08048d88 <phase_5+49>:        mov    -0x4(%ebp),%eax
+0x08048d8b <phase_5+52>:        and    $0xf,%eax
+0x08048d8e <phase_5+55>:        mov    %eax,-0x4(%ebp)
+0x08048d91 <phase_5+58>:        cmp    $0xf,%eax
+0x08048d94 <phase_5+61>:        je     0x8048dc2 <phase_5+107>
+0x08048d96 <phase_5+63>:        mov    $0x0,%edx
+0x08048d9b <phase_5+68>:        mov    $0x0,%ecx
+0x08048da0 <phase_5+73>:        add    $0x1,%edx
+0x08048da3 <phase_5+76>:        mov    0x804a340(,%eax,4),%eax
+0x08048daa <phase_5+83>:        add    %eax,%ecx
+
+0x08048dac <phase_5+85>:        cmp    $0xf,%eax
+0x08048daf <phase_5+88>:        jne    0x8048da0 <phase_5+73>
+0x08048db1 <phase_5+90>:        movl   $0xf,-0x4(%ebp)
+0x08048db8 <phase_5+97>:        cmp    $0xf,%edx
+0x08048dbb <phase_5+100>:       jne    0x8048dc2 <phase_5+107>
+0x08048dbd <phase_5+102>:       cmp    %ecx,-0x8(%ebp)
+0x08048dc0 <phase_5+105>:       je     0x8048dc7 <phase_5+112>
+0x08048dc2 <phase_5+107>:       call   0x80491c5 <explode_bomb>
+
+0x08048dc7 <phase_5+112>:       leave  
+0x08048dc8 <phase_5+113>:       ret    
+End of assembler dump.

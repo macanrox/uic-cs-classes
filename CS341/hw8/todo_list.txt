@@ -1,0 +1,9 @@
+DONE
+Connection works. Double check code!
+
+GetMovie successfully parses database and returns movie name
+
+
+
+FIX ERRORS
+

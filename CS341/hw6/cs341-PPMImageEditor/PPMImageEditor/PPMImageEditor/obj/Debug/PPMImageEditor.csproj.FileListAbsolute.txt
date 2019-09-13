@@ -1,0 +1,14 @@
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\obj\Debug\PPMImageEditor.csprojResolveAssemblyReference.cache
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\obj\Debug\PPMImageEditor.Form1.resources
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\obj\Debug\PPMImageEditor.Properties.Resources.resources
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\obj\Debug\PPMImageEditor.csproj.GenerateResource.Cache
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\PPMImageEditor.exe.config
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\PPMImageEditor.exe
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\PPMImageEditor.pdb
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\FSharp.Core.dll
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\PPMImageLibrary.dll
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\PPMImageLibrary.pdb
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\PPMImageLibrary.xml
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\bin\Debug\FSharp.Core.xml
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\obj\Debug\PPMImageEditor.exe
+C:\Users\Bresia\Dropbox\CS\cs341\hw6\cs341-PPMImageEditor\PPMImageEditor\PPMImageEditor\obj\Debug\PPMImageEditor.pdb

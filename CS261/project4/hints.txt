@@ -1,0 +1,3 @@
+0x55683760: 0x55683780		
+
+$1 = (void *) 0x55683760	<- we can verify that this is the address for %ebp

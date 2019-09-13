@@ -1,0 +1,61 @@
+	//mandelbrot.c
+	/*This was mentioned in class
+	 
+	 PARENT
+	 const int READ = 0, WRITE = 1;
+	 
+	 int fd[2], nRows = 42, nCols = 24;
+	 pipe(fd);
+	 
+	 close fd[READ]
+	 
+	 FILE *out = fdopen (fd[1 or WRITE])
+	 fprintf( out, "%d %d", nRows, nCols);
+	 fflush( out );
+	 
+	 
+	 CHILD
+	 close fd[WRITE]
+	 dup2( fd[READ] <- code -> READ )
+	 close fd[READ]
+	 
+	 exec
+	 int nR, nC;
+	 scanf( "%d %d", &nR, &nC );
+	 
+	 */
+
+//in mandelDisplay.c
+	/*
+	 using %p will print an address
+	 
+	 int *data = shmmat( sid, NULL, 0 );
+	 *data = 42;
+	 
+	 printf( "child2, sid = %d, addr = %p, valve = %d\n", sid, data, *data );
+	 
+	 ^if this goes through, the child will be able to create & get shared memory
+	 */
+
+//in mandelCalc
+	/*
+	 using %p will print an address
+	 
+	 int *data = shmmat( sid, NULL, 0 );
+	 *data = 42;
+	 
+	 printf( "child1, sid = %d, addr = %p, valve = %d\n", sid, data, *data );
+	 
+	 ^if this goes through, the child wil be able to create & get shared memory
+	 */
+	
+	/* message queue
+	 msgbuf m;
+	 m.code = 42;
+	 msgsnd( mid1, &m, sizeof(m) - sizeof(long);
+	 
+	 */
+
+parent closes read end of pipe 1 and both ends of pipe 2
+child 1 closes write end of pipe 1 and read end of pipe 2
+child 2 closes both ends of pipe 1 and write end of pipe 2

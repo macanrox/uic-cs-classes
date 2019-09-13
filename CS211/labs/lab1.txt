@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdio.c>
+#define MAX 256
+
+	int main(int argc, char **argv )
+	{
+		FILE *src, *dst;	//creates arrays for 256 characters
+		char b[MAX];
+
+		if( argc != 3 )
+		{
+			printf("Usage: %s <input file name> <output file name>", argv[0]);
+			exit(-1);
+		}
+
+		/* Try to open source and destination files. */
+
+		if (( src = fopen( "infile.text", "r")) == NULL )	// r variable reads?
+		{
+			puts( "Can't open input file." );
+			exit(-1);
+		}
+
+		if (( dst = fopen( "outfile.text", "w")) == NULL )	// w variable write?
+		{
+			puts( "Can't open output file." );
+			fclose( src );
+			exit(-1);
+		}
+
+		/* Copy one file to the next. */
+
+		while ( ( fgets( b, MAX, src ) ) != NULL )
+		{
+			fputs( b, dst );
+		}
+
+		/* END PROGRAM */
+
+		fclose( src );
+		fclose( dst );
+	}
